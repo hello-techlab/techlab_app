@@ -7,7 +7,7 @@ $textbox-opacity: 0.8;
 :export {
     TextBoxOpacity: $textbox-opacity;
     BackgroundWhite: $white-background;
-    Blue: $blue;
+    Blue: $main-blue;
     Orange: $orange;
 }
 
@@ -24,10 +24,15 @@ $textbox-opacity: 0.8;
     
     margin-left: $box-margin;
     padding-bottom: 5px;
-    padding-left: $text-margin - $box-margin;
+    padding-left: $text-margin;
     padding-right: $text-margin;
-    
-    background-color: $white-background;
+
+    background-color: $main-blue;
+    cursor: pointer;
+
+    &:hover {
+        background-color: darken($main-blue, 5);
+    }
 }
 
 .ChatBotContainer{
@@ -49,6 +54,8 @@ $textbox-opacity: 0.8;
     display: block;
     text-align: center;
     font-family: $font;
+    font-size: $h1-font-size;
+    color: white;
 
     h2 {
         padding-top: 5px;
