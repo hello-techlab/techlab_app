@@ -15,8 +15,14 @@ $textbox-opacity: 0.8;
     font-family: $font;
     display: block;
     background-size: cover;
-    padding-bottom: 20px;
-    padding-left: 40px;
+    margin-bottom: 12px;
+    padding-left: 24px;
+
+    transition: padding-left .1s ease;
+
+    &:hover {
+        padding-left: 0;
+    }
 }
 
 .TextBox {
@@ -26,13 +32,8 @@ $textbox-opacity: 0.8;
     padding-bottom: 5px;
     padding-left: $text-margin;
     padding-right: $text-margin;
-
-    background-color: $main-blue;
+    
     cursor: pointer;
-
-    &:hover {
-        background-color: darken($main-blue, 5);
-    }
 }
 
 .ChatBotContainer{

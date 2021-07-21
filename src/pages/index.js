@@ -6,6 +6,8 @@ import UiWrapper from "../components/ui-wrapper"
 import axios from "axios"
 import { navigate } from "gatsby"
 
+import {MainBlue} from '../styles/global.scss'
+
 const IndexPage = () => {
   const [isAdmin, setIsAdmin] = useState(false)
 
@@ -37,7 +39,7 @@ const IndexPage = () => {
             title=""
             text="Informações"
             textColor="white"
-            color="#647B98"
+            color={MainBlue}
           />
         </li>
         <li
@@ -49,7 +51,7 @@ const IndexPage = () => {
             title=""
             text="Questionarios"
             textColor="white"
-            color="#647B98"
+            color={MainBlue}
           />
         </li>
         <li
@@ -61,7 +63,7 @@ const IndexPage = () => {
             title=""
             text="Acolhimento"
             textColor="white"
-            color="#647B98"
+            color={MainBlue}
           />
         </li>
         <li
@@ -73,7 +75,7 @@ const IndexPage = () => {
             title=""
             text="Perguntas Frequentes"
             textColor="white"
-            color="#647B98"
+            color={MainBlue}
           />
         </li>
         {isAdmin && (
