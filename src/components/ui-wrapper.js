@@ -4,6 +4,7 @@ import Helmet from "react-helmet"
 import HomeIcon from "@material-ui/icons/Home"
 import IconButton from "@material-ui/core/IconButton"
 import InfoIcon from "@material-ui/icons/Info"
+import ChatIcon from "@material-ui/icons/Chat"
 import React from "react"
 import isLoggedIn from "../services/auth"
 import { navigate } from "gatsby"
@@ -15,6 +16,7 @@ const NavbarIcons = [
   { Icon: <InfoIcon fontSize="large" />, destUrl: "/info" },
   { Icon: <HomeIcon fontSize="large" />, destUrl: "/" },
   { Icon: <ContactSupportIcon fontSize="large" />, destUrl: "/faq" },
+  { Icon: <ChatIcon fontSize = "large"/>, destUrl: "/chatBot"}
 ]
 
 const GoBackArrow = ({ to }) => (
