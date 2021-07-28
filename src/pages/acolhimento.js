@@ -502,7 +502,7 @@ class ScheduleMenu extends React.Component {
 }
 
 const AcolhimentoPage = () => (
-  <UiWrapper pageNeedsAuth='true' pageTitle='Acolhimentos' lastPage='/'>
+  <UiWrapper pageNeedsAuth='false' pageTitle='Acolhimentos' lastPage='/'>
     <ContentContainer title={pageHeader.title} text={pageHeader.text} bgColor={global.MainBlue}/>
     <ScheduleMenu/>
   </UiWrapper>
