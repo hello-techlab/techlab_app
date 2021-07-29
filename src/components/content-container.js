@@ -20,8 +20,8 @@ const TextBox = ({ color, textColor, name, children }) => {
   );
 }
 
-const ContentContainer = ({title, text, color, textColor, bgImage, children}) => (
-  <div className={styles.ContentContainer} style={bgImage!==null ? {backgroundImage: `url(${bgImage})`} : {}}>
+const ContentContainer = ({title, text, color, textColor, bgImage, urlId, children}) => (
+  <div className={styles.ContentContainer} style={bgImage!==null ? {backgroundImage: `url(${bgImage})`} : {}}  id = {urlId}>
     <TextBox color={color} textColor={textColor} name={text}>
       <div className={styles.Text}>
         <h1>{title}</h1>

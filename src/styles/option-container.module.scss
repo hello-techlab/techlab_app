@@ -16,6 +16,7 @@ $textbox-opacity: 0.8;
     display: block;
     background-size: cover;
     padding-bottom: 20px;
+    padding-left: 40px;
 }
 
 .TextBox {
@@ -27,6 +28,21 @@ $textbox-opacity: 0.8;
     padding-right: $text-margin;
     
     background-color: $white-background;
+}
+
+.ChatBotContainer{
+    @extend .ContentContainer;
+    margin-top: 100px;
+    padding-left: 0;
+    padding-right: 40px;
+    
+}
+
+.ChatBotTextBox{
+    @extend .TextBox;
+    border-radius: 0px 50px 50px 0px;
+    margin-left: 0;
+    padding-right: 40px;
 }
 
 .Text {

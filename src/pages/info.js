@@ -5,6 +5,7 @@ import ShareBox from "../components/sharebox"
 import UiWrapper from "../components/ui-wrapper"
 import bgImg from "../images/infopage_background.jpg"
 import global from "../styles/global.scss"
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 const header = {
   title: `Mais Informações sobre Saúde Mental e Atenção Psicossocial na Universidade`,
@@ -79,6 +80,7 @@ const InfoPage = () => (
     pageTitle="Informações adicionais"
     lastPage="/"
   >
+    
     <ContentContainer
       title={header.title}
       text={header.text}
@@ -88,19 +90,23 @@ const InfoPage = () => (
     >
       <ContactBox />
     </ContentContainer>
+
     <ContentContainer title={theme1.title} text={theme1.text}/>
+
     <ContentContainer
       title={theme2.title}
       text={theme2.text}
       color={global.MainOrange}
+      urlId = "ansiedade"
     />
-    <ContentContainer title={theme3.title} text={theme3.text}/>
+    <ContentContainer title={theme3.title} text={theme3.text} urlId = "depressao"/>
     <ContentContainer
       title={theme4.title}
       text={theme4.text}
       color={global.MainBlue}
+      urlId="sintomasfisicos"
     />
-    <ContentContainer title={theme5.title} text={theme5.text}/>
+    <ContentContainer title={theme5.title} text={theme5.text} urlId = "produtividade"/>
     <ContentContainer title={theme6.title} text={theme6.text} color={global.MainOrange}/>
     <ShareBox />
   </UiWrapper>

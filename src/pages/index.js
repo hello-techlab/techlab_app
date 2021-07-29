@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 
 import OptionContainer from "../components/option-container"
+import ChatBotOptionContainer from "../components/chatbot-option-container"
 import UiWrapper from "../components/ui-wrapper"
 import axios from "axios"
 import { navigate } from "gatsby"
@@ -26,7 +27,7 @@ const IndexPage = () => {
 
   return (
     <UiWrapper pageNeedsAuth="false" pageTitle="TechLab" lastPage="/">
-      <ul style={{ listStyle: "none" }}>
+      <ul style={{ listStyle: "none", paddingInlineStart: 0}}>
         <li
           onClick={() => {
             navigate("/info")
@@ -89,6 +90,18 @@ const IndexPage = () => {
             />
           </li>
         )}
+        <li
+          onClick={() => {
+            navigate("/chatBot")
+          }}
+        >
+          <ChatBotOptionContainer
+            title=""
+            text="Olá! Eu sou Health, o robô ajudante do GAPsi, posso lhe ajudar?"
+            textColor="white"
+            color="#EFA748"
+          />
+        </li>
       </ul>
     </UiWrapper>
   )

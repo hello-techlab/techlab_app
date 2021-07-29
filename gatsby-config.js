@@ -9,6 +9,7 @@ module.exports = {
     author: `@techlab`
   },
   plugins: [
+    `gatsby-plugin-anchor-links`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {

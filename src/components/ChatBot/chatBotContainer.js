@@ -1,53 +1,25 @@
 import React from "react"
-
+import dialogData from  "./data/chat.json"
 import ChatBotButtonBox from "./chatBotButtonBox"
 import ChatBotChatBox from "./chatBotChatbox"
 import { ChatBotMessageInput } from "./chatBotMessageInput"
 import UiWrapper from "../../components/ui-wrapper"
-// import axios from "axios"
+
 import { navigate } from "gatsby"
 import styles from "../../styles/chatcontainer.module.scss"
 
 class ChatBotContainer extends React.Component {
   messagesEndRef = React.createRef()
 
+  dialogArray = dialogData
+
   constructor(props) {
     super(props)
     this.state = {
-      sessionId: undefined,
-      messages: [{text: "oioioi", button: false, direction:"server"},
-                 {text: "aiai", button: false, direction: "server"},
-                  {text: "uiuiui", button: false, direction: "server"},
-                  {text: "aiai", button: true, direction: "server"},
-                  {text: "uiuiui", button: false, direction: "server"},
-                  {text: "aiai", button: false, direction: "server"},
-                  {text: "uiuiui", button: true, direction: "server"},
-                  {text: "aiai", button: false, direction: "client"},
-                  {text: "uiuiui", button: false, direction: "client"},
-                  {text: "aiai", button: true, direction: "server"},
-                  {text: "uiuiui", button: false, direction: "server"},
-                  {text: "aiai", button: true, direction: "server"},
-                  {text: "uiuiui", button: true, direction: "server"}, 
-                  {text: "aiai", button: true, direction: "client"},
-                  {text: "uiuiui", button: false, direction: "server"},
-                  {text: "aiai", button: false, direction: "client"},
-                  {text: "uiuiui", button: false, direction: "server"},
-                  {text: "aiai", button: false, direction: "server"},
-                  {text: "uiuiui", button: false, direction: "client"},
-                  {text: "aiai", button: false, direction: "client"},
-                  {text: "uiuiui", button: false, direction: "server"},
-                  {text: "aiai", button: false, direction: "server"},
-                  {text: "uiuiui", button: false, direction: "client"},
-                  {text: "aiai", button: false, direction: "client"},
-                  {text: "uiuiui", button: false, direction: "client"},
-                  {text: "aiai", button: false, direction: "server"},
-                  {text: "uiuiui", button: false, direction: "client"},
-                  {text: "aiai", button: false, direction: "client"},
-                  {text: "esse é um botão", button: true, direction: "client"},],
-                  
-      options: ["opção 1", "opção 2", "opção 3", "opção 4"],
+      messages: [],
+      options: [],
       messageNumber: 0,
-      blocked: false,
+      blocked: false
     }
   }
 
@@ -55,50 +27,42 @@ class ChatBotContainer extends React.Component {
     this.messagesEndRef.current.scrollIntoView({ behavior: "smooth" })
   }
 
-
- 
-
-  // componentDidMount = async () => {
-
-  //   this.setState({
-  //     sessionId: res.data.session_id,
-  //     messages: res.data.intro.map(msg => {
-  //       return {
-  //         direction: "server",
-  //         message: msg,
-  //         button: false,
-  //       }
-  //     }),
-  //     options: res.data.options,
-  //   })
-  // }
+  componentDidMount = async () => {   
+    this.setState({
+      messages: this.dialogArray[0].messages,
+      options: this.dialogArray[0].options,
+    })
+  }
 
   componentDidUpdate = () => {
     this.scrollToBottom()
   }
 
-  addMessage = messageText => {
+  addMessage = chosenOption => {
     this.scrollToBottom()
 
-    console.log(messageText);
-
-    if (messageText == "Sair") {
-      navigate("/")
-      return
-    }
-
-    var message = {
+    var clientOptionMessage = {
       direction: "client",
-      text: messageText,
+      text: chosenOption.text,
       button: false,
     }
 
-    this.setState({
-      messages: [...this.state.messages, message],
-      blocked: false,
-    })
 
-    //this.getServerResponse(messageText)
+    if(chosenOption.nextDialogIndex === -1)
+    {
+        navigate(chosenOption.destUrl)
+        return
+    }
+
+    var nextDialog = this.dialogArray[chosenOption.nextDialogIndex]
+
+    var updatedMessages = [...this.state.messages, clientOptionMessage];
+    updatedMessages = updatedMessages.concat(nextDialog.messages)
+
+    this.setState({
+      messages: updatedMessages,
+      options: nextDialog.options,
+    })
 
     this.setState({
       messageNumber: this.state.messageNumber + 1,
@@ -106,70 +70,6 @@ class ChatBotContainer extends React.Component {
     this.scrollToBottom()
   }
 
-  // getServerResponse = async messageText => {
-  //   try {
-  //     const res = await axios.put(
-  //       `http://${this.props.chatAddr}/questionarios/${this.props.form}/${this.state.sessionId}/proxima/`,
-  //       { answer: messageText },
-  //       { headers: { "x-access-token": window.localStorage.getItem("TOKEN") } }
-  //     )
-
-  //     let response_server = [
-  //       {
-  //         direction: "server",
-  //         message: res.data.question,
-  //         button: false,
-  //       },
-  //     ]
-
-  //     if (res.data.options) {
-  //       this.setState({ options: res.data.options })
-  //     } else this.setState({ options: [] })
-
-  //     if (res.data.question === "" || res.data.question === undefined) {
-  //       let messages = res.data.result
-  //       let messagesObject = Array()
-
-  //       for (const idx in messages) {
-  //         messagesObject.push({
-  //           direction: "server",
-  //           message: messages[idx],
-  //           button: false,
-  //         })
-  //       }
-
-  //       messagesObject.push({
-  //         direction: "server",
-  //         message:
-  //           "Se desejar, você pode marcar uma conversa com a gente! Só clicar no botão abaixo que você será redirecionado para a página de acolhimento.",
-  //         button: false,
-  //       })
-
-  //       messagesObject.push({
-  //         direction: "server",
-  //         message: "Clique aqui para ir para a aba de acolhimento",
-  //         button: true,
-  //       })
-
-  //       this.setState({
-  //         blocked: true,
-  //         messages: [...this.state.messages, ...messagesObject],
-  //       })
-  //     } else {
-  //       this.setState({
-  //         blocked: false,
-  //         messages: [...this.state.messages, ...response_server],
-  //       })
-  //     }
-
-  //     this.scrollToBottom()
-  //   } catch (error) {
-  //     if (error.response.status == 401) {
-  //       navigate("/loginpage")
-  //       return
-  //     }
-  //   }
-  // }
 
   renderMessage = (message, index) => {
     if (message.button) {
@@ -190,27 +90,20 @@ class ChatBotContainer extends React.Component {
       )
   }
 
-
-  printSomething = () => {
-    console.log("printando dentro do clickButton")
-  }
-
   render() {
     return (
       <UiWrapper pageTitle={this.props.form} lastPage="/home">
         
         <div className={styles.container}>
           {this.state.messages.map(this.renderMessage)}
+          <ChatBotMessageInput
+            options={this.state.options}
+            blocked={this.state.blocked}
+            onSubmit={this.addMessage}
+          /> 
           {this.props.children}
           <div ref={this.messagesEndRef} />
         </div>
-        
-        <ChatBotMessageInput
-          options={this.state.options}
-          blocked={this.state.blocked}
-          onSubmit={this.addMessage}
-        /> 
-
       </UiWrapper>
     )
   }

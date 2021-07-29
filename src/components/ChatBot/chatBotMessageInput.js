@@ -1,7 +1,8 @@
 import React, { Fragment } from "react"
 
 import logo from "../../images/interface.png"
-import styles from "../../styles/messageinput.module.scss"
+//import styles from "../../styles/chatbox.module.scss"
+import styles from "../../styles/chatBotMessageInput.module.scss"
 
 class ChatBotMessageInput extends React.Component {
   constructor(props) {
@@ -32,9 +33,9 @@ class ChatBotMessageInput extends React.Component {
       this.setState({ message: "Digite sua mensagem" })
   }
 
-  handleClickButton = event => {
+  handleClickButton = (option)=> {
     if (this.props.blocked === false) {
-      this.props.onSubmit(event.target.value)
+      this.props.onSubmit(option)
     }
   }
 
@@ -43,11 +44,11 @@ class ChatBotMessageInput extends React.Component {
       <Fragment>
         {this.props.options.map(option => (
           <input
-            value={option}
+            value={option.text}
             type="button"
-            key={option}
+            key={option.text}
             className={styles.buttoninput}
-            onClick={this.handleClickButton}
+            onClick={() => this.handleClickButton(option)}
             onBlur={this.returnToDefault}
           />
         ))}
@@ -58,6 +59,8 @@ class ChatBotMessageInput extends React.Component {
   
 
   renderInput = () => {
+
+
     if (
       this.props.options
         ? this.props.options.length > 0
@@ -95,7 +98,7 @@ class ChatBotMessageInput extends React.Component {
     return (
       <React.Fragment>
         <form
-          className={styles.input}
+          // className={styles.input}
           onSubmit={this.state.message !== "" ? this.handleSubmit : () => {}}
         >
           {this.renderInput()}
