@@ -7,11 +7,9 @@ $textbox-opacity: 0.8;
 :export {
     TextBoxOpacity: $textbox-opacity;
     BackgroundWhite: $white-background;
-    Blue: $main-blue;
-    Orange: $orange;
 }
 
-.ContentContainer {
+.OptionContainer {
     font-family: $font;
     display: block;
     background-size: cover;

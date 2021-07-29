@@ -6,7 +6,10 @@ import UiWrapper from "../components/ui-wrapper"
 import axios from "axios"
 import { navigate } from "gatsby"
 
+import bgImg from "../images/infopage_background.jpg"
 import {MainBlue} from '../styles/global.scss'
+
+import styles from '../styles/index.module.scss';
 
 const IndexPage = () => {
   const [isAdmin, setIsAdmin] = useState(false)
@@ -28,83 +31,88 @@ const IndexPage = () => {
   checkAdmin()
 
   return (
-    <UiWrapper pageNeedsAuth="false" pageTitle="TechLab" lastPage="/">
-      <ul style={{ listStyle: "none", paddingInlineStart: 0}}>
-        <li
-          onClick={() => {
-            navigate("/info")
-          }}
-        >
-          <OptionContainer
-            title=""
-            text="Informações"
-            textColor="white"
-            color={MainBlue}
-          />
-        </li>
-        <li
-          onClick={() => {
-            navigate("/questionarios")
-          }}
-        >
-          <OptionContainer
-            title=""
-            text="Questionarios"
-            textColor="white"
-            color={MainBlue}
-          />
-        </li>
-        <li
-          onClick={() => {
-            navigate("/acolhimento")
-          }}
-        >
-          <OptionContainer
-            title=""
-            text="Acolhimento"
-            textColor="white"
-            color={MainBlue}
-          />
-        </li>
-        <li
-          onClick={() => {
-            navigate("/faq")
-          }}
-        >
-          <OptionContainer
-            title=""
-            text="Perguntas Frequentes"
-            textColor="white"
-            color={MainBlue}
-          />
-        </li>
-        {isAdmin && (
+    <UiWrapper pageNeedsAuth="false" pageTitle="TechLab">
+      <div
+        className={styles.page}
+        style={{ "--bg-img": `url(${new URL(bgImg, window.location.origin)})` }}
+      >
+        <ul style={{ listStyle: "none", paddingLeft: 0 }}>
           <li
             onClick={() => {
-              navigate("/Atendents")
+              navigate("/info")
             }}
           >
             <OptionContainer
               title=""
-              text="Administração"
+              text="Informações"
               textColor="white"
-              color="#647B98"
+              color={MainBlue}
             />
           </li>
-        )}
-        <li
-          onClick={() => {
-            navigate("/chatBot")
-          }}
-        >
-          <ChatBotOptionContainer
-            title=""
-            text="Olá! Eu sou Health, o robô ajudante do GAPsi, posso lhe ajudar?"
-            textColor="white"
-            color="#EFA748"
-          />
-        </li>
-      </ul>
+          <li
+            onClick={() => {
+              navigate("/questionarios")
+            }}
+          >
+            <OptionContainer
+              title=""
+              text="Questionarios"
+              textColor="white"
+              color={MainBlue}
+            />
+          </li>
+          <li
+            onClick={() => {
+              navigate("/acolhimento")
+            }}
+          >
+            <OptionContainer
+              title=""
+              text="Acolhimento"
+              textColor="white"
+              color={MainBlue}
+            />
+          </li>
+          <li
+            onClick={() => {
+              navigate("/faq")
+            }}
+          >
+            <OptionContainer
+              title=""
+              text="Perguntas Frequentes"
+              textColor="white"
+              color={MainBlue}
+            />
+          </li>
+          {isAdmin && (
+            <li
+              onClick={() => {
+                navigate("/Atendents")
+              }}
+            >
+              <OptionContainer
+                title=""
+                text="Administração"
+                textColor="white"
+                color="#647B98"
+              />
+            </li>
+          )}
+          <li
+            onClick={() => {
+              navigate("/chatBot")
+            }}
+          >
+            <ChatBotOptionContainer
+              title=""
+              text="Olá! Eu sou Health, o robô ajudante do GAPsi, posso lhe ajudar?"
+              textColor="white"
+              color="#EFA748"
+            />
+          </li>
+        </ul>
+      </div>
     </UiWrapper>
   )
 }

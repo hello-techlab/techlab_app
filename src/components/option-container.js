@@ -10,7 +10,7 @@ const TextBox = ({ color, textColor, name, children}) => {
 }
 
 const OptionContainer = ({text, color, textColor}) => (
-  <div className={ styles.ContentContainer}>
+  <div className={styles.OptionContainer}>
     <TextBox color={color} textColor={textColor} name={text}>
       <div className={styles.Text}>
         <h2/>
