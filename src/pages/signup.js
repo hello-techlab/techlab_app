@@ -22,32 +22,29 @@ const Signup = () => {
   const handleSendClick = async () => {
     console.log(nusp, instituto)
     const chatAPIAddr = process.env.CHAT_API_ADDR
-    // try {
-    //   const [
-    //     userId,
-    //     userEmail,
-    //     userName,
-    //   ] = await axios.get(`http://${chatAPIAddr}/auth/info`, {
-    //     headers: { "x-access-token": window.localStorage.getItem("TOKEN") },
-    //   })
-
-    //   const res = await axios.post(
-    //     `http://${chatAPIAddr}/usuarios/aluno/`,
-    //     {
-    //       nusp: nusp,
-    //       instituto: instituto,
-    //       userId: userId,
-    //       userEmail: userEmail,
-    //       userName: userName,
-    //     },
-    //     { headers: { "x-access-token": window.localStorage.getItem("TOKEN") } }
-    //   )
-    // } catch (error) {
-    //   if (error.response.status == 401) {
-    //     navigate("/loginpage")
-    //     return
-    //   }
-    // }
+      try {
+        const [userId, userEmail, userName,
+        ] = await axios.get(`http://localhost:49163/auth/generatejwt`, {
+          headers: { "x-access-token": window.localStorage.getItem("TOKEN") },
+        })
+        console.log("111111111111111111 PASSOU")
+        const res = await axios.post(
+          `http://${chatAPIAddr}/usuarios/aluno/`,
+          {
+            nusp: nusp,
+            instituto: instituto,
+            userId: userId,
+            userEmail: userEmail,
+            userName: userName,
+          },
+          { headers: { "x-access-token": window.localStorage.getItem("TOKEN") } }
+        )
+      } catch (error) {
+        if (error.response.status == 401) {
+          navigate("/loginpage")
+          return
+        }
+      }
   }
 
   const handleCancelClick = () => {

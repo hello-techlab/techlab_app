@@ -142,11 +142,13 @@ class LoginPageUnwrapped extends React.Component {
   async componentDidMount() {
     let token = this.getToken()
     console.log(token)
+    console.log("AAA")
     let tokenIsValid = await isTokenValid(token)
+    console.log(tokenIsValid)
 
     if (token !== null && tokenIsValid) {
       window.localStorage.setItem("TOKEN", token)
-      navigate("/")
+      navigate("/questionarios")
       return <div />
     }
   }
@@ -158,7 +160,7 @@ class LoginPageUnwrapped extends React.Component {
         <InnerBox>
           <Title>Login</Title>
           <ButtonBox>
-            <StyledLink href={`http://${process.env.CHAT_API_ADDR}/auth/login`}>
+            <StyledLink href={`http://localhost:49163/auth/info`}>
               <Button
                 height="50px"
                 width="100%"
