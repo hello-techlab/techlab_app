@@ -131,22 +131,22 @@
         "options": [
             {
                 "text": "Você pode me falar mais sobre ansiedade?",
-                "nextDialogIndex": 5,
+                "nextDialogIndex": 4,
                 "destUrl": ""
             },
             {
                 "text": "Você pode me falar mais sobre depressão?",
-                "nextDialogIndex": 6,
+                "nextDialogIndex": 5,
                 "destUrl": ""
             },
             {
                 "text": "Você pode me falar mais sobre sintomas físicos?",
-                "nextDialogIndex": 7,
+                "nextDialogIndex": 6,
                 "destUrl": ""
             },
             {
                 "text": "Você pode me falar mais sobre produtividade?",
-                "nextDialogIndex": 8,
+                "nextDialogIndex": 7,
                 "destUrl": ""
             },
             {
