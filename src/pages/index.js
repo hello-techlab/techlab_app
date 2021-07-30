@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 
 import OptionContainer from "../components/option-container"
 import ChatBotOptionContainer from "../components/chatbot-option-container"
@@ -14,6 +14,8 @@ import styles from '../styles/index.module.scss';
 const IndexPage = () => {
   const [isAdmin, setIsAdmin] = useState(false)
 
+  const [bgImgAbsolute, setBgImgAbsolute] = useState(bgImg)
+
   const checkAdmin = async () => {
     const chatAPIAddr = process.env.CHAT_API_ADDR
 
@@ -28,13 +30,17 @@ const IndexPage = () => {
     }
   }
 
+  useEffect(() => {
+    setBgImgAbsolute(new URL(bgImg, window.location.origin));
+  },[bgImg])
+
   checkAdmin()
 
   return (
     <UiWrapper pageNeedsAuth="false" pageTitle="TechLab">
       <div
         className={styles.page}
-        style={{ "--bg-img": `url(${new URL(bgImg, window.location.origin)})` }}
+        style={{ "--bg-img": `url(${bgImgAbsolute})` }}
       >
         <ul style={{ listStyle: "none", paddingLeft: 0 }}>
           <li
