@@ -4,24 +4,24 @@
         "index": 0,
         "messages": [
             {
-                "text": "Olá! Meu nome é Health! Sou o robô ajudante do GAPsi. Como posso lhe ajudar?",
+                "text": "Olá! Meu nome é Health! Sou o robô ajudante do GAPsi e estou feliz de estar com você. Como posso lhe ajudar?",
                 "button": false,
                 "direction": "server"
             }
         ],
         "options": [
             {
-                "text": "Gostaria de saber mais sobre o GAPsi e o APOIA USP",
+                "text": "Gostaria de saber mais sobre o GAPsi e o APOIA USP.",
                 "nextDialogIndex": 1,
                 "destUrl": ""
             },
             {
-                "text": "Gostaria de saber mais sobre saúde mental na universidade",
+                "text": "Gostaria de saber mais sobre saúde mental na universidade.",
                 "nextDialogIndex": 3,
                 "destUrl": ""
             },
             {
-                "text": "Gostaria de saber mais sobre o questionário de saúde mental",
+                "text": "Gostaria de preencher questionários sobre  saúde mental.",
                 "nextDialogIndex": 8,
                 "destUrl": ""
             },
@@ -42,7 +42,12 @@
                 "direction": "server"
             },
             {
-                "text": "O GAPsi e o APOIA USP (Apoio Psicossocial USP - São Carlos) se propõem a receber, acolher e acompanhar os estudantes e funcionários da USP - São Carlos, com o objetivo de desenvolver atividades preventivas e protetivas à saúde mental, atuando sobre os determinantes que causam sofrimento psíquico e acompanhando os casos em que o sofrimento já está instaurado.",
+                "text": "O GAPsi é o Grupo de Apoio Psicopedagógico do ICMC e o Apoia USP é o Apoio Psicossocial da USP - São Carlos.",
+                "button": false,
+                "direction": "server"
+            },
+            {
+                "text": "Ambos se propõem a receber, acolher e acompanhar os estudantes e funcionários da nossa comunidade, com o objetivo de desenvolver atividades preventivas e protetivas à saúde mental, atuando sobre os determinantes que causam sofrimento psíquico e acompanhando os casos em que o sofrimento já está instaurado.",
                 "button": false,
                 "direction": "server"
             },
@@ -59,7 +64,7 @@
                 "destUrl": "/faq"
             },
             {
-                "text": "Vamos falar sobre outra coisa",
+                "text": "Vamos falar sobre outra coisa.",
                 "nextDialogIndex": 2,
                 "destUrl": ""
             }
@@ -87,7 +92,7 @@
                 "destUrl": ""
             },
             {
-                "text": "Gostaria de saber mais sobre o questionário de saúde mental.",
+                "text": "Gostaria de preencher questionários sobre  saúde mental.",
                 "nextDialogIndex": 8,
                 "destUrl": ""
             },
@@ -113,12 +118,12 @@
                 "direction": "server"
             },
             {
-                "text": "No campo social, as diversas formas de violação de direitos humanos e violência também estão diretamente relacionadas ao sofrimento psíquico.                ",
+                "text": "No campo social, as diversas formas de violação de direitos humanos e violência também estão diretamente relacionadas ao sofrimento psíquico.",
                 "button": false,
                 "direction": "server"
             },
             {
-                "text": "Nas universidades, é possível que esses fatores apresentem-se nas condições de trabalho e de aprendizagem, uma vez que, como instituição, a universidade tende a reproduzir valores que são próprios da sociedade.                ",
+                "text": "Nas universidades, é possível que esses fatores apresentem-se nas condições de trabalho e de aprendizagem, uma vez que, como instituição, a universidade tende a reproduzir valores que são próprios da sociedade.",
                 "button": false,
                 "direction": "server"
             }
@@ -169,7 +174,13 @@
                 "text": "Contudo, em excesso, a ansiedade pode ser prejudicial e afetar o comportamento social, acadêmico e profissional cotidiano das pessoas, sendo necessário a busca de ajuda.",
                 "button": false,
                 "direction": "server"
+            },
+            {
+                "text": "Lembre-se de contar com o GAPsi e o com Apoia sempre que precisar!",
+                "button": false,
+                "direction": "server"
             }
+            
         ],
         "options": [
             {
@@ -220,6 +231,11 @@
             },
             {
                 "text": "Esse quadro pode ser de longa duração ou recorrente.",
+                "button": false,
+                "direction": "server"
+            },
+            {
+                "text": "Caso se identifique com esses sintomas, não deixe de nos contatar!",
                 "button": false,
                 "direction": "server"
             }
@@ -359,12 +375,62 @@
                 "direction": "server"
             },
             {
-                "text": "No nosso website temos disponível um questionário desenvolvido pela Universidade de Columbia, para ajudar a avaliar sua saúde mental e detectar situações de risco.",
+                "text": "No nosso website temos disponível um questionário científico para ajudar a avaliar a sua saúde mental e detectar situações de risco",
                 "button": false,
                 "direction": "server"
             },
             {
-                "text": "Deseja responder nosso questionário?",
+                "text": "Sobre o SRQ20:",
+                "button": false,
+                "direction": "server"
+            },
+            {
+                "text": "A SRQ-20 é uma escala que avalia aspectos gerais de saúde mental, já validada em outros estudos.",
+                "button": false,
+                "direction": "server"
+            },
+            {
+                "text": "Não tem o objetivo de indicar diagnósticos, mas sim rastrear possíveis situações que indiquem sofrimento psíquico.",
+                "button": false,
+                "direction": "server"
+            },
+            {
+                "text": "Ela é autoaplicável, o que significa que a própria pessoa pode responder as questões.",
+                "button": false,
+                "direction": "server"
+            },
+            {
+                "text": "Consiste em 20 perguntas, que podem ser respondidas com SIM ou NÃO.",
+                "button": false,
+                "direction": "server"
+            },
+            {
+                "text": "Sobre a Escala de Columbia:",
+                "button": false,
+                "direction": "server"
+            },
+            {
+                "text": "Nessa escala, será avaliado o risco de suicídio através de algumas perguntas.",
+                "button": false,
+                "direction": "server"
+            },
+            {
+                "text": "Essa escala foi criada por pesquisadores de diversas universidades (Universidade de Columbia; Universidade da Pensilvânia; Universidade de Pittsburgh e Universidade de Nova Iorque) e avalia comportamentos específicos que podem ser indicativos da intenções de uma pessoa em cometer suicídio.",
+                "button": false,
+                "direction": "server"
+            },
+            {
+                "text": "É importante ressaltar que os resultados apresentados são referentes a um período específico de sua vida, e que também podem mudar de acordo com as condições ambientais e temporais.",
+                "button": false,
+                "direction": "server"
+            },
+            {
+                "text": "É importante destacar que este resultado não visa definir você enquanto “suicida”, mas, sim, mostrar a necessidade de você procurar ajuda para enfrentar as dificuldades que está passando, no momento.",
+                "button": false,
+                "direction": "server"
+            },
+            {
+                "text": "Por isso pedimos que você seja o mais sincero/a possível nas respostas, para que você saiba se é importante buscar ajuda, ou de familiares e amigos, ou de uma equipe de saúde especializada.",
                 "button": false,
                 "direction": "server"
             }
@@ -388,12 +454,17 @@
         "index": 9,
         "messages": [
             {
-                "text": "Não se preocupe!",
+                "text": "Estamos esperando por você!",
                 "button": false,
                 "direction": "server"
             },
             {
-                "text": "Temos diversos profissionais preparados para te ajudar.Acesse a nossa página de acolhimento e agende um horário conosco!",
+                "text": "Em nossa equipe, contamos com pessoas da Psicologia e da Assistência Social, preparadas para as mais diversas demandas.",
+                "button": false,
+                "direction": "server"
+            },
+            {
+                "text": "Acesse a nossa página de acolhimento e agende um horário conosco!",
                 "button": false,
                 "direction": "server"
             }
