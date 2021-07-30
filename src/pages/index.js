@@ -7,7 +7,7 @@ import axios from "axios"
 import { navigate } from "gatsby"
 
 import bgImg from "../images/infopage_background.jpg"
-import {MainBlue} from '../styles/global.scss'
+import {MainBlue, MainOrange} from '../styles/global.scss'
 
 import styles from '../styles/index.module.scss';
 
@@ -108,7 +108,7 @@ const IndexPage = () => {
               title=""
               text="Olá! Eu sou Health, o robô ajudante do GAPsi, posso lhe ajudar?"
               textColor="white"
-              color="#EFA748"
+              color={MainOrange}
             />
           </li>
         </ul>

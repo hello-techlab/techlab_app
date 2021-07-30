@@ -36,9 +36,15 @@ $textbox-opacity: 0.8;
 
 .ChatBotContainer{
     @extend .OptionContainer;
-    margin-top: 100px;
+    margin-top: 60px;
     padding-left: 0;
-    padding-right: 40px;
+    padding-right: 24px;
+
+    transition: padding-right .1s ease;
+
+    &:hover {
+        padding-right: 0;
+    }
     
 }
 

@@ -92,7 +92,7 @@ class ChatBotContainer extends React.Component {
 
   render() {
     return (
-      <UiWrapper pageTitle={this.props.form} lastPage="/home">
+      <UiWrapper pageTitle={this.props.form} lastPage="/">
         
         <div className={styles.container}>
           {this.state.messages.map(this.renderMessage)}
