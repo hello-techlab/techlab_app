@@ -35,7 +35,7 @@ $textbox-opacity: 0.8;
 }
 
 .ChatBotContainer{
-    @extend .ContentContainer;
+    @extend .OptionContainer;
     margin-top: 100px;
     padding-left: 0;
     padding-right: 40px;
