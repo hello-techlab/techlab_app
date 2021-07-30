@@ -60,21 +60,7 @@ const theme5 = {
 
 const theme6 = {
   title: `Sobre esse aplicativo`,
-  text: `Esse aplicativo foi desenvolvido com carinho por alunos da disciplina de Engenharia de Software, do campus da USP de São Carços.
-  - Professora responsável pela disciplina: Simone Rocio Senger de Souza
-  - Time de Gestão: 
-    Felipe Moreira Neves de Souza, Scrum Master - Sistemas de Informação (USP)
-    João Pedro Almeida Santos Secundino, product owner - Ciências da Computação (USP)
-  - Time do Back-End:
-    Gabriel Santos Nicolau, Desenvolvedor - Ciências da Computação (USP)
-    Giovana Daniele da Silva, Desenvolvedora - Ciências da Computação (USP)
-    Leonardo Giovanni Prati, desenvolvedor - Sistemas de Informação (USP)
-  - Time do Front-End: 
-    Iago Elias de Faria Barbosa, desenvolvedor - Engenharia da Computação (UFSCar)
-    Matheus Godoy Bolsarini, desenvolvedor - Sistemas de Informação (USP)
-    Pedro Pastorelo
-    Pedro Paulo Isnard Brando, desenvolvedor - Sistemas de Informação (USP)  
-    :)`
+  text: ''
 }
 
 
@@ -123,7 +109,89 @@ const InfoPage = () => (
       title={theme6.title}
       text={theme6.text}
       color={global.MainOrange}
-    />
+    >
+      <p>
+        Esse aplicativo foi desenvolvido com carinho por alunos da disciplina de
+        Engenharia de Software, do campus da USP de São Carlos.
+      </p>
+      <p>
+        <b>Professora responsável pela disciplina:</b> Simone Rocio Senger de
+        Souza
+      </p>
+      <p>
+        <b>Equipe Techlab:</b>
+      </p>
+      <p>
+        Time de Gestão:
+        <ul>
+          <li>
+            Felipe Moreira Neves de Souza, Scrum Master - Sistemas de Informação
+            (USP)
+          </li>
+          <li>
+            João Pedro Almeida Santos Secundino, Product Owner - Ciências da
+            Computação (USP)
+          </li>
+        </ul>
+      </p>
+      <p>
+        Time do Back-End:
+        <ul>
+          <li>
+            Gabriel Santos Nicolau, Desenvolvedor - Ciências da Computação (USP)
+          </li>
+          <li>
+            Giovana Daniele da Silva, Desenvolvedora - Ciências da Computação
+            (USP)
+          </li>
+          <li>
+            Leonardo Giovanni Prati, desenvolvedor - Sistemas de Informação
+            (USP)
+          </li>
+        </ul>
+      </p>
+      <p>
+        Time do Front-End:
+        <ul>
+          <li>
+            Iago Elias de Faria Barbosa, desenvolvedor - Engenharia da
+            Computação (UFSCar)
+          </li>
+          <li>
+            Matheus Godoy Bolsarini, desenvolvedor - Sistemas de Informação
+            (USP)
+          </li>
+          <li>Pedro Pastorelo</li>
+          <li>
+            Pedro Paulo Isnard Brando, desenvolvedor - Sistemas de Informação
+            (USP)
+          </li>
+        </ul>
+      </p>
+      <p>
+        <b>Equipe Hello, World:</b>
+      </p>
+      <p>
+        Time de Gestão:
+        <ul>
+          <li>Antonio Sebastian Fernandes Rabelo, Product Owner</li>
+          <li>João Marcos Della Torre Divino, Scrum Master</li>
+        </ul>
+      </p>
+      <p>Time de Desenvolvimento:
+        <ul>
+          <li>Arthur Font Gouveia</li>
+          <li>Gabriel Santos Ribeiro</li>
+          <li>Paulo Inay Cruz</li>
+          <li>Vinícius Molina Garcia</li>
+          <li>Vitor Rodrigues Leonardi</li>
+          <li>Daniel da Rocha Froes</li>
+          <li>João Pedro Borges de Castro</li>
+          <li>Samuel Libardi Godoy</li>
+        </ul>
+      </p>
+      :)
+    </ContentContainer>
     <ShareBox />
   </UiWrapper>
 )

@@ -56,7 +56,7 @@ const IndexPage = () => {
           >
             <OptionContainer
               title=""
-              text="Questionarios"
+              text="Questionários"
               textColor="white"
               color={MainBlue}
             />
