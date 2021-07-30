@@ -7,16 +7,20 @@ $textbox-opacity: 0.8;
 :export {
     TextBoxOpacity: $textbox-opacity;
     BackgroundWhite: $white-background;
-    Blue: $blue;
-    Orange: $orange;
 }
 
-.ContentContainer {
+.OptionContainer {
     font-family: $font;
     display: block;
     background-size: cover;
-    padding-bottom: 20px;
-    padding-left: 40px;
+    margin-bottom: 12px;
+    padding-left: 24px;
+
+    transition: padding-left .1s ease;
+
+    &:hover {
+        padding-left: 0;
+    }
 }
 
 .TextBox {
@@ -24,17 +28,23 @@ $textbox-opacity: 0.8;
     
     margin-left: $box-margin;
     padding-bottom: 5px;
-    padding-left: $text-margin - $box-margin;
+    padding-left: $text-margin;
     padding-right: $text-margin;
     
-    background-color: $white-background;
+    cursor: pointer;
 }
 
 .ChatBotContainer{
-    @extend .ContentContainer;
-    margin-top: 100px;
+    @extend .OptionContainer;
+    margin-top: 60px;
     padding-left: 0;
-    padding-right: 40px;
+    padding-right: 24px;
+
+    transition: padding-right .1s ease;
+
+    &:hover {
+        padding-right: 0;
+    }
     
 }
 
@@ -49,6 +59,8 @@ $textbox-opacity: 0.8;
     display: block;
     text-align: center;
     font-family: $font;
+    font-size: $h1-font-size;
+    color: white;
 
     h2 {
         padding-top: 5px;

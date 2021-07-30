@@ -53,23 +53,27 @@ const ListItem = ({
 
   const [playAvailable, setPlayAvailable] = useState(true)
 
-  const handleInfoClick = () => {
+  const handleInfoClick = e => {
     callback(context, apelido, descricao)
+    e.stopPropagation()
+    e.nativeEvent.stopImmediatePropagation()
     // setPlayAvailable(true)
     return null
   }
 
-  const handlePlayClick = () => {
+  const handlePlayClick = e => {
     navigate(`/formpage?form=${apelido}`)
+    e.stopPropagation()
+    e.nativeEvent.stopImmediatePropagation()
     //Vai para o formulário
   }
 
   return (
-    <StyledListItem key={apelido}>
+    <StyledListItem key={apelido} onClick={handlePlayClick}>
       <Text>{children}</Text>
       <IconBox>
-        <StyledInfoIcon onClick={() => handleInfoClick()} />
-        {playAvailable && <StyledPlayIcon onClick={() => handlePlayClick()} />}
+        <StyledInfoIcon onClick={handleInfoClick} />
+        {playAvailable && <StyledPlayIcon />}
       </IconBox>
     </StyledListItem>
   )

@@ -9,7 +9,7 @@ const ChatBot = () => {
       {({ location, navigate }) => {
         return (
           <ChatBotContainer
-          form = "chat teste"
+          form = "Chat"
           />
         )
 

@@ -1,6 +1,6 @@
 import React from "react"
 import dialogData from  "./data/chat.json"
-import ChatBotButtonBox from "./chatBotButtonBox"
+//import ChatBotButtonBox from "./chatBotButtonBox"
 import ChatBotChatBox from "./chatBotChatbox"
 import { ChatBotMessageInput } from "./chatBotMessageInput"
 import UiWrapper from "../../components/ui-wrapper"
@@ -72,16 +72,7 @@ class ChatBotContainer extends React.Component {
 
 
   renderMessage = (message, index) => {
-    if (message.button) {
-      return (
-        <ChatBotButtonBox
-          key={index}
-          text={message.message}
-          direction={message.direction}
-        />
-      )
-    } else
-      return (
+    return (
         <ChatBotChatBox
           key={index}
           text={message.text}
@@ -92,7 +83,7 @@ class ChatBotContainer extends React.Component {
 
   render() {
     return (
-      <UiWrapper pageTitle={this.props.form} lastPage="/home">
+      <UiWrapper pageTitle={this.props.form} lastPage="/">
         
         <div className={styles.container}>
           {this.state.messages.map(this.renderMessage)}

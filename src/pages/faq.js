@@ -56,13 +56,13 @@ const theme5 = {
 
 const InfoPage = () => (
   <UiWrapper pageNeedsAuth='false' pageTitle='Perguntas Frequentes' lastPage='/'>
-    <ContentContainer title={header.title} text={header.text} color={global.MainOrange}>
+    <ContentContainer title={header.title} text={header.text} color={global.MainBlue} textColor={global.FontColorLight}>
       <ContactBox/>
     </ContentContainer>
     <ContentContainer title={theme1.title} text={theme1.text}/>
-    <ContentContainer title={theme2.title} text={theme2.text} color={global.MainBlue}/>
+    <ContentContainer title={theme2.title} text={theme2.text} color={global.MainOrange}/>
     <ContentContainer title={theme3.title} text={theme3.text}/>
-    <ContentContainer title={theme4.title} text={theme4.text} color={global.MainOrange}/>
+    <ContentContainer title={theme4.title} text={theme4.text} color={global.LightBlue}/>
     <ContentContainer title={theme5.title} text={theme5.text}/>
     <ShareBox/>
   </UiWrapper>

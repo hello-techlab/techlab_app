@@ -23,7 +23,7 @@ $inner-text-padding: $border-radius/6.19;
     min-height: 120px;
     
     margin: 0px 0px 0px $box-margin;
-    padding: 0px $text-margin 0px $text-margin - $box-margin;
+    padding: 4px $text-margin 16px $text-margin - $box-margin;
     
     background-color: $white-background;
 }
@@ -32,7 +32,6 @@ $inner-text-padding: $border-radius/6.19;
     display: block;
     text-align: center;
     font-family: $font;
-    color: $font-color-dark;
     padding: $inner-text-padding 0px;
     
     h1 {
@@ -44,8 +43,8 @@ $inner-text-padding: $border-radius/6.19;
     p {
         text-align: justify;
         font-size: $text-font-size;
-        line-height: 1.25em;
-        margin: 4px 0px;
+        line-height: 1.33;
+        margin: 16px 0px;
         vertical-align: middle;
     }
 }

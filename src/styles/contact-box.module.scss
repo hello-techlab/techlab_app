@@ -12,7 +12,6 @@
     }
     a {
         text-decoration: none;
-        mix-blend-mode: difference;
         color:white;
     }
 }
@@ -23,21 +22,16 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    color: $font-color-dark;
     
     p {
         font-size: smaller;
         margin: 0px 0px 0px 6px;
-    }
-    a {
-        mix-blend-mode: color-burn;
     }
 }
 
 .Contact {
     justify-content: center;
     text-align: center;
-    color: $font-color-dark;
     margin: 12px 0px;
 
     p {
@@ -45,6 +39,10 @@
         font-size: $text-font-size;
         line-height: 1.25em;
         text-align: left;
+    }
+
+    a {
+        color: $apoia-orange;
     }
 
 }

@@ -88,7 +88,6 @@ class UiWrapper extends React.Component {
         </Helmet>
         <Header title={this.props.pageTitle} lastPage={this.props.lastPage} />
         <div className={styles.Content}>{this.props.children}</div>
-        <Navbar />
       </div>
     )
   }
